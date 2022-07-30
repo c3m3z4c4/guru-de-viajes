@@ -1,16 +1,15 @@
 const { Router } = require("express");
-const { auth } = require('../utils');
+const { auth } = require("../utils");
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  auth().then((res) => {
+router.get("/", async (req, res) => {
+  let response = await auth().then((res) => {
     console.log(res);
-  })
+  });
   res.json({
-    status: 200,
+    response,
   });
 });
 
 module.exports = router;
-
