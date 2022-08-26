@@ -15,4 +15,11 @@ router.get("/", async (req, res) => {
   return res;
 });
 
+router.post("/form", async (req, res) => {
+  let data = req.body;
+  console.log(data);
+  res.json(data);
+  return res;
+});
+
 module.exports = router;
